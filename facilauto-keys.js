@@ -1,3 +1,12 @@
+// Configuration object: Map keys to CSS selectors
+const keyMap = {
+    'A': 'img[src="/static/img/test/A.jpg"]',
+    'S': 'img[src="/static/img/test/B.jpg"]',
+    'D': 'img[src="/static/img/test/C.jpg"]',
+    'J': 'img[src="/static/img/test/back.png"]',
+    'K': 'img[src="/static/img/test/next.png"]'
+};
+
 // Function to simulate a click on an element
 function simulateClick(element) {
     if (element) {
@@ -5,30 +14,13 @@ function simulateClick(element) {
     }
 }
 
-// Function to find the image element by its src attribute
-function findImageBySrc(src) {
-    return document.querySelector(`img[src="${src}"]`);
-}
-
 // Add a keydown event listener to the document
 document.addEventListener('keydown', function(event) {
-    switch (event.key.toUpperCase()) {
-        case 'A':
-            simulateClick(findImageBySrc('/static/img/test/A.jpg'));
-            break;
-        case 'S':
-            simulateClick(findImageBySrc('/static/img/test/B.jpg'));
-            break;
-        case 'D':
-            simulateClick(findImageBySrc('/static/img/test/C.jpg'));
-            break;
-        case 'J':
-            simulateClick(findImageBySrc('/static/img/test/back.png'));
-            break;
-        case 'K':
-            simulateClick(findImageBySrc('/static/img/test/next.png'));
-            break;
+    const key = event.key.toUpperCase();
+    if (keyMap[key]) {
+        const element = document.querySelector(keyMap[key]);
+        simulateClick(element);
     }
 });
 
-alert('Keyboard accessibility enabled! Press A, S, D, J, or K to simulate clicks.');
+alert('Keyboard accessibility enabled! Press configured keys to simulate clicks.');
