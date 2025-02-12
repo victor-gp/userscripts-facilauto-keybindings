@@ -1,5 +1,5 @@
-// Configuration object: Map keys to CSS selectors
-const keyMap = {
+// Configuration: Map keys to CSS selectors
+const keySelectorMap = {
     'A': 'img[src="/static/img/test/A.jpg"]',
     'S': 'img[src="/static/img/test/B.jpg"]',
     'D': 'img[src="/static/img/test/C.jpg"]',
@@ -7,9 +7,13 @@ const keyMap = {
     'K': 'img[src="/static/img/test/next.png"]',
     'Q': 'button.help-button-1', // Ayuda
     'W': 'button.btn-success', // Lamina
-    'E': 'div.sweet-content', // to exit Ayuda - nah doesn't work
     'R': 'button.btn-danger', // Audioexplicacion
     'T': 'button.btn-info', // Videoexplicacion
+};
+
+// Configuration: Map keys to functions
+const keyFunctionMap = {
+    'E': () => simulateClick(document.elementFromPoint(0, 0)), // Exit modal
 };
 
 // Function to simulate a click on an element
@@ -22,8 +26,14 @@ function simulateClick(element) {
 // Add a keydown event listener to the document
 document.addEventListener('keydown', function(event) {
     const key = event.key.toUpperCase();
-    if (keyMap[key]) {
-        const element = document.querySelector(keyMap[key]);
+
+    // Check if the key is in the keyFunctionMap
+    if (keyFunctionMap[key]) {
+        keyFunctionMap[key]();
+    }
+    // Otherwise, check if the key is in the keyMap
+    else if (keySelectorMap[key]) {
+        const element = document.querySelector(keySelectorMap[key]);
         simulateClick(element);
     }
 });

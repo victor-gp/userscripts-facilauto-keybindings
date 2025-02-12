@@ -27,7 +27,8 @@ La activación del bookmarklet persiste entre test y test siempre que no recargu
 - `K`: Siguiente
 - `Q`: Ayuda
 - `W`: Lámina
-- `E`: Salir de Ayuda (no funciona)
+- `E`: Salir de dialogos modales
+  - para Ayuda, Lámina, Finalizar test, etc.
 - `R`: Audioexplicación
 - `T`: Videoexplicación
 
