@@ -5,15 +5,15 @@ const keySelectorMap = {
     'D': 'img[src="/static/img/test/C.jpg"]',
     'J': 'img[src="/static/img/test/back.png"]',
     'K': 'img[src="/static/img/test/next.png"]',
-    'Q': 'button.help-button-1', // Ayuda
-    'W': 'button.btn-success', // Lamina
+    'W': 'button.help-button-1', // Ayuda
+    'E': 'button.btn-success', // Lamina
     'R': 'button.btn-danger', // Audioexplicacion
     'T': 'button.btn-info', // Videoexplicacion
 };
 
 // Configuration: Map keys to functions
 const keyFunctionMap = {
-    'E': () => simulateClick(document.elementFromPoint(0, 0)), // Exit modal
+    'Q': () => simulateClick(document.elementFromPoint(0, 0)), // Exit modal
 };
 
 // Function to simulate a click on an element

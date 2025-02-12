@@ -4,7 +4,7 @@ Un bookmarklet para la página de tests de FacilAuto que añade atajos de teclad
 
 Lo he creado para agilizar mi uso de la aplicación y lo comparto por si le puede resultar útil a alguien más.
 
-No es una solución completa. Algunas acciones aún requieren el ratón, como por ejemplo moverse por la lista de exámenes.
+No es una solución completa. Algunos elementos aún requieren el ratón, como por ejemplo el botón de finalizar test.
 
 ## Cómo usar
 
@@ -25,10 +25,10 @@ La activación del bookmarklet persiste entre test y test siempre que no recargu
 - `D`: opción C
 - `J`: Anterior
 - `K`: Siguiente
-- `Q`: Ayuda
-- `W`: Lámina
-- `E`: Salir de dialogos modales
+- `Q`: Salir de dialogos modales
   - para Ayuda, Lámina, Finalizar test, etc.
+- `W`: Ayuda
+- `E`: Lámina
 - `R`: Audioexplicación
 - `T`: Videoexplicación
 
