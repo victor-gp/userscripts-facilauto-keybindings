@@ -1,4 +1,4 @@
-# FacilAuto Web - Accesibilidad de teclado
+# FacilAuto web app - Accesibilidad de teclado
 
 Un bookmarklet para la página de tests de FacilAuto que añade atajos de teclado para algunas acciones comunes.
 

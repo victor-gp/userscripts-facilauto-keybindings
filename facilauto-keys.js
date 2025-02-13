@@ -27,11 +27,9 @@ function simulateClick(element) {
 document.addEventListener('keydown', function(event) {
     const key = event.key.toUpperCase();
 
-    // Check if the key is in the keyFunctionMap
     if (keyFunctionMap[key]) {
         keyFunctionMap[key]();
     }
-    // Otherwise, check if the key is in the keyMap
     else if (keySelectorMap[key]) {
         const element = document.querySelector(keySelectorMap[key]);
         simulateClick(element);
