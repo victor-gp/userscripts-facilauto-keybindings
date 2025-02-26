@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        FacilAuto Keys
+// @name        FacilAuto Test Keys
 // @namespace   Violentmonkey Scripts
 // @match       https://alumno.examentrafico.com/
 // @grant       none
@@ -11,7 +11,7 @@
 (function() {
     'use strict';
 
-    const script_id = 'facilauto-keys'
+    const script_id = 'facilauto-test-keys'
 
     // Configuration: Map keys to CSS selectors
     const keySelectorMap = {
@@ -35,7 +35,7 @@
     };
 
     function isTargetPage() {
-        const urlMatch = window.location.hash !== '#/test/block/test/exam/174/0'
+        const urlMatch = window.location.hash !== '#/test/block/test/exam/174/0';
         if (!urlMatch) return false;
         const contentMatch = document.querySelector('div.test-box-top') !== null;
         return contentMatch;
