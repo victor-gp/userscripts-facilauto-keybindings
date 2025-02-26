@@ -20,10 +20,13 @@
         'D': 'img[src="/static/img/test/C.jpg"]',
         'J': 'img[src="/static/img/test/back.png"]',
         'K': 'img[src="/static/img/test/next.png"]',
+        'L': 'img[src="/static/img/test/end.png"]',
         'W': 'button.help-button-1', // Ayuda
         'E': 'button.btn-success', // Lamina
         'R': 'button.btn-danger', // Audioexplicacion
         'T': 'button.btn-info', // Videoexplicacion
+        'Enter': '.sweet-modal.is-visible button.btn-default', // Modal - White button
+        'Backspace': '.sweet-modal.is-visible button.btn-danger', // Modal - Red button
     };
 
     // Configuration: Map keys to functions
@@ -39,7 +42,11 @@
     }
 
     function handleKeydown(event) {
-        const key = event.key.toUpperCase();
+        let key = event.key;
+        // normalize letter keys
+        if (/^[A-Za-z]$/.test(key)) {
+            key = key.toUpperCase();
+        }
 
         if (keyFunctionMap[key]) {
             keyFunctionMap[key]();
