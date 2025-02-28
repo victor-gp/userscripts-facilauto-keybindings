@@ -88,15 +88,28 @@
         }
     }
 
+    function waitUntil(condFn, execFn) {
+        setTimeout(() => {
+            if (condFn()) {
+                execFn();
+            } else {
+                waitUntil(condFn, execFn)
+            }
+        }, 50)
+    }
+
     function handlePageChange() {
         if (isTargetPage()) {
-            //todo: fix
-            // doesn't work on page load, because the app hasn't spawned them yet.
-            // not even with a setTimeout of 2s.
-            // alt: manual activation with the 'A' key.
-            // makeButtonsNavigable();
-            document.addEventListener("keydown", handleKeydown);
-            console.debug(`${script_id}: load`);
+            const isPageLoaded = () => {
+                const tooltipElements = document.querySelectorAll(".has-tooltip");
+                return tooltipElements.length !== 0;
+            };
+            const setUp = () => {
+                makeButtonsTabbable();
+                document.addEventListener("keydown", handleKeydown);
+                console.debug(`${script_id}: load`);
+            };
+            waitUntil(isPageLoaded, setUp);
         } else {
             document.removeEventListener("keydown", handleKeydown);
             console.debug(`${script_id}: remove`);

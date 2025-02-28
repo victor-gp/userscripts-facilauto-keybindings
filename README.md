@@ -53,7 +53,6 @@ La activación de los atajos persiste entre página y página siempre que no rec
 
 ### Página de selección de test
 
-- `A`: activar navegación por teclado (**requisito** para el resto)
 - `Enter`: acceder al test seleccionado
 - `H`: navegar al primer test suspendido
 - `J`: navegar al test siguiente
