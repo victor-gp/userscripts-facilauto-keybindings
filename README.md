@@ -1,36 +1,70 @@
-# FacilAuto web app - Accesibilidad de teclado
+# FacilAuto Keybindings
 
-Un bookmarklet para la página de tests de FacilAuto que añade atajos de teclado para algunas acciones comunes.
+Userscripts para la aplicación web de FacilAuto que añaden atajos de teclado para algunas pantallas:
 
-Lo he creado para agilizar mi uso de la aplicación y lo comparto por si le puede resultar útil a alguien más.
+- `facilauto-test-keys.js`: cubre la página de test
+- `facilauto-block-keys.js`: cubre la página de selección de test (lista)
 
-No es una solución completa. Algunos elementos aún requieren el ratón, como por ejemplo el botón de finalizar test.
+Los he creado para agilizar mi uso de la aplicación y los comparto por si le pueden resultar útiles a alguien más.
+
+No es una solución completa para la accesibilidad de teclado, el resto de pantallas aún requieren el uso del ratón.
+
+Si añades una página de lista de tests a marcadores (por ejemplo: [Examen por Ordenador B](https://alumno.examentrafico.com/#/test/block/test/exam/174/0)), puedes navegar fácilmente entre estas dos páginas.
 
 ## Cómo usar
 
+Con cualquier gestor de userscripts (Greasemonkey, Violentmonkey, Tampermonkey, etc.)
+
+Sigue el proceso de Crear un script nuevo y copia el código de estos scripts.
+
+### Bookmarklet
+
+Alternativamente puedes crear bookmarklets para cada uno de los scripts:
+
 - Accede a [Bookmarklet Maker](https://caiorss.github.io/bookmarklet-maker/).
-- Dale un nombre al bookmarklet en el campo 'Title', por ejemplo 'facilauto-keys'.
-- Copia el código de `facilauto-keys.js` en el campo 'Code'.
+- Dale un nombre al bookmarklet en el campo 'Title', por ejemplo 'facilauto-test-keys'.
+- Copia el código de `facilauto-test-keys.js` en el campo 'Code'.
 - Pulsa el botón de 'Generate Bookmarklet'.
 - Arrastra el bookmarklet generado a la barra de marcadores de tu navegador.
+- Repite el proceso para `facilauto-block-keys.js`.
 
-Cuando estés en la página de exámen de FacilAuto, pulsa el bookmarklet y se activarán los atajos.
+Cuando estés en la página de FacilAuto, pulsa los bookmarklets y se activarán los atajos.
 
-La activación del bookmarklet persiste entre test y test siempre que no recargues la página (F5).
+La activación de los atajos persiste entre página y página siempre que no recargues la página (F5) ni la abandones.
 
 ## Asociaciones de teclas
+
+### Página de test
 
 - `A`: opción A
 - `S`: opción B
 - `D`: opción C
 - `J`: Anterior
 - `K`: Siguiente
-- `Q`: Salir de dialogos modales
-  - para Ayuda, Lámina, Finalizar test, etc.
+- `L`: Finalizar test
+- `Q`: Salir de los diálogos modales
+  - diálogos modales: Ayuda, Lámina, Finalizar test, etc.
 - `W`: Ayuda
 - `E`: Lámina
 - `R`: Audioexplicación
 - `T`: Videoexplicación
+- `Enter`: botón blanco en un diálogo modal
+- `Retroceso`: botón rojo en un diálogo modal
+
+### Página de lista de tests
+
+- `A`: activar navegación por teclado (**requisito** para el resto)
+- `H`: navegar al primer test suspendido
+- `J`: navegar al test siguiente #TODO
+- `K`: navegar al test anterior #TODO
+- `L`: navegar al primer test no realizado
+- `Enter`: acceder al test seleccionado
+
+## Desarrollo
+
+[How to edit scripts with your favorite editor? - Violentmonkey](https://violentmonkey.github.io/posts/how-to-edit-scripts-with-your-favorite-editor/)
+
+Servir el proyecto con `$ python -m http.server`
 
 ## Licencia
 
