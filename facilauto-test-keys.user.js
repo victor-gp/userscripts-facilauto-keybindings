@@ -22,9 +22,9 @@
         'K': 'img[src="/static/img/test/next.png"]',
         'L': 'img[src="/static/img/test/end.png"]',
         'W': 'button.help-button-1', // Ayuda
-        'E': 'button.btn-success', // Lamina
-        'R': 'button.btn-danger', // Audioexplicacion
-        'T': 'button.btn-info', // Videoexplicacion
+        'E': 'button:has(svg.fa-images)', // Lamina
+        'R': 'button:has(svg.fa-volume-down)', // Audioexplicacion
+        'T': 'button:has(svg.fa-play)', // Videoexplicacion
         'Enter': '.sweet-modal.is-visible button.btn-default', // Modal - White button
         'Backspace': '.sweet-modal.is-visible button.btn-danger', // Modal - Red button
     };
