@@ -9,23 +9,23 @@
 // ==/UserScript==
 
 (function() {
-    ("use strict");
+    "use strict";
 
     const script_id = "facilauto-block-keys";
 
     // Configuration: Map keys to CSS selectors _to focus_
     const keySelectorMap = {
         'H': 'div.tests-block-item > .fail ~ .has-tooltip', // First failed test
-        'J': 'img[src="/static/img/test/back.png"]', //todo: Next test
-        'K': 'img[src="/static/img/test/next.png"]', //todo: Previous test
         'L': 'div.tests-block-item > div:first-child:not(.fail):not(.success) ~ .has-tooltip', // First not-taken test
-        // 'Tab': next button (implicit)
     };
 
     // Configuration: Map keys to functions
     const keyFunctionMap = {
-        'A': makeButtonsNavigable,
+        'A': makeButtonsTabbable,
         'Enter': () => simulateClick(document.activeElement),
+        'J': focusNextTest,
+        'K': focusPreviousTest,
+        // 'Tab': next button (implicit)
     };
 
     function isTargetPage() {
@@ -36,16 +36,36 @@
         return contentMatch;
     }
 
-    function makeButtonsNavigable() {
+    let tabbableElements;
+    function makeButtonsTabbable() {
         // heuristic: elements with a tooltip seem to be buttons
         const tooltipElements = document.querySelectorAll(".has-tooltip");
-        tooltipElements.forEach((element) => {
-            if (!element.checkVisibility()) return;
+        tabbableElements = Array.from(tooltipElements).filter(el => el.checkVisibility());
+        tabbableElements.forEach((element) => {
             element.setAttribute("tabindex", "0");
             // element.style.border = "1px solid red";
         });
-        const firstNavigableElement = document.querySelector('[tabindex="0"]');
-        firstNavigableElement.focus();
+        tabbableElements[0].focus();
+    }
+
+    function focusNextTest() {
+        const currentIndex = tabbableElements.indexOf(document.activeElement);
+        if (currentIndex !== -1) {
+            tabbableElements[currentIndex + 4]?.focus();
+        } else {
+            tabbableElements[0].focus();
+        }
+        document.activeElement.scrollIntoView({ behavior: 'smooth', block: "center" });
+    }
+
+    function focusPreviousTest() {
+        const currentIndex = tabbableElements.indexOf(document.activeElement);
+        if (currentIndex !== -1) {
+            tabbableElements[currentIndex - 4]?.focus();
+        } else {
+            tabbableElements[0].focus();
+        }
+        document.activeElement.scrollIntoView({ behavior: 'smooth', block: "center" });
     }
 
     function handleKeydown(event) {

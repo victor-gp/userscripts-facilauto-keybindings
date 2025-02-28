@@ -51,14 +51,16 @@ La activación de los atajos persiste entre página y página siempre que no rec
 - `Enter`: botón blanco en un diálogo modal
 - `Retroceso`: botón rojo en un diálogo modal
 
-### Página de lista de tests
+### Página de selección de test
 
 - `A`: activar navegación por teclado (**requisito** para el resto)
-- `H`: navegar al primer test suspendido
-- `J`: navegar al test siguiente #TODO
-- `K`: navegar al test anterior #TODO
-- `L`: navegar al primer test no realizado
 - `Enter`: acceder al test seleccionado
+- `H`: navegar al primer test suspendido
+- `J`: navegar al test siguiente
+- `K`: navegar al test anterior
+- `L`: navegar al primer test no realizado
+- `Tab`: navegar al modo de test siguiente
+- `Mayus+Tab`: navegar al modo de test anterior
 
 ## Desarrollo
 
