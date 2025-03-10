@@ -55,12 +55,12 @@ La activación de las teclas persiste entre pantalla y pantalla siempre que no r
 ### Página de selección de test
 
 - `Enter`: acceder al test seleccionado
+- `Tab`: navegar al botón siguiente
+- `Mayus+Tab`: navegar al botón anterior
 - `H`: navegar al primer test suspendido
 - `J`: navegar al test siguiente
 - `K`: navegar al test anterior
 - `L`: navegar al primer test no realizado
-- `Tab`: navegar al modo de test siguiente
-- `Mayus+Tab`: navegar al modo de test anterior
 
 ## Desarrollo
 
