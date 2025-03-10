@@ -19,6 +19,8 @@ Con cualquier gestor de userscripts (Greasemonkey, Violentmonkey, Tampermonkey, 
 
 Puedes instalarlo [desde Greasy Fork.](https://greasyfork.org/en/scripts/529408-facilauto-keys)
 
+Después de instalarlo se cargará automáticamente cada vez que visites la aplicación web de FacilAuto.
+
 ### Como bookmarklet
 
 Alternativamente puedes crear un bookmarklet para el script:
