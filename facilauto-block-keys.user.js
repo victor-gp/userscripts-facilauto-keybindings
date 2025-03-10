@@ -5,7 +5,8 @@
 // @grant       none
 // @version     1.0
 // @author      victor-gp
-// @description Adds keyboard a11y to the FacilAuto block (tests list) page.
+// @description Añade navegación por teclado en la página de selección de test de FacilAuto.
+// @license MIT
 // ==/UserScript==
 
 (function() {
