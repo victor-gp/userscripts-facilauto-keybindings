@@ -1,12 +1,15 @@
 // ==UserScript==
-// @name        FacilAuto Keys
-// @namespace   Violentmonkey Scripts
-// @match       https://alumno.examentrafico.com/
-// @grant       none
-// @version     1.0
-// @author      victor-gp
-// @description Añade navegación por teclado en algunas páginas de la aplicación web de FacilAuto (test, selección de test).
-// @license MIT
+// @name            FacilAuto Keys
+// @namespace       victor-gp.dev
+// @description     Añade navegación por teclado en algunas páginas de la aplicación web de FacilAuto (test, selección de test).
+// @match           https://alumno.examentrafico.com/
+// @grant           none
+// @author          victor-gp
+// @license         MIT
+// @homepageURL     https://github.com/victor-gp/userscripts-facilauto-keybindings
+// @supportURL      https://github.com/victor-gp/userscripts-facilauto-keybindings/issues
+// @contributionURL
+// @version         1.0.1
 // ==/UserScript==
 
 (function testKeys() {
