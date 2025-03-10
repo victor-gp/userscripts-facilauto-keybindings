@@ -76,6 +76,8 @@ El script se actualiza automáticamente por medio de un webhook configurado en G
 
 Ver: [Setting up a webhook - Greasy Fork](https://greasyfork.org/en/users/webhook-info) (requiere login).
 
+Recuerda cambiar la version del script (en los metadatos) cuando quieras disparar esta actualización.
+
 La actualización automatica del campo Additional Info no está configurada. Hay que hacerlo manualmente, a partir de los primeros apartados de este Readme (intro, asociaciones de teclas).
 
 ## Licencia
