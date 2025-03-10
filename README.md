@@ -1,36 +1,37 @@
 # FacilAuto Keybindings
 
-Userscripts para la aplicación web de FacilAuto que añaden atajos de teclado para algunas pantallas:
+Userscript para la aplicación web de FacilAuto que añade navegación por teclado para algunas pantallas:
 
-- `facilauto-test-keys.js`: cubre la página de test
-- `facilauto-block-keys.js`: cubre la página de selección de test (lista)
+- la página de test
+- la página de selección de test (lista)
 
-Los he creado para agilizar mi uso de la aplicación y los comparto por si le pueden resultar útiles a alguien más.
+Lo he creado para agilizar mi uso de la aplicación y los comparto por si le pueden resultar útiles a alguien más.
 
 No es una solución completa para la accesibilidad de teclado, el resto de pantallas aún requieren el uso del ratón.
 
-Si añades una página de lista de tests a marcadores (por ejemplo: [Examen por Ordenador B](https://alumno.examentrafico.com/#/test/block/test/exam/174/0)), puedes navegar fácilmente entre estas dos páginas.
+Si añades una página de selección de test a marcadores (por ejemplo: [Examen por Ordenador B](https://alumno.examentrafico.com/#/test/block/test/exam/174/0)), puedes navegar fácilmente entre estas dos páginas.
 
 ## Cómo usar
 
+### Como userscript
+
 Con cualquier gestor de userscripts (Greasemonkey, Violentmonkey, Tampermonkey, etc.)
 
-Sigue el proceso de Crear un script nuevo y copia el código de estos scripts.
+Puedes instalarlo [desde Greasy Fork.](https://greasyfork.org/en/scripts/529408-facilauto-keys)
 
-### Bookmarklet
+### Como bookmarklet
 
-Alternativamente puedes crear bookmarklets para cada uno de los scripts:
+Alternativamente puedes crear un bookmarklet para el script:
 
 - Accede a [Bookmarklet Maker](https://caiorss.github.io/bookmarklet-maker/).
-- Dale un nombre al bookmarklet en el campo 'Title', por ejemplo 'facilauto-test-keys'.
-- Copia el código de `facilauto-test-keys.js` en el campo 'Code'.
+- Dale un nombre al bookmarklet en el campo 'Title', por ejemplo 'facilauto-keys'.
+- Copia el código de `facilauto-keys.js` en el campo 'Code'.
 - Pulsa el botón de 'Generate Bookmarklet'.
 - Arrastra el bookmarklet generado a la barra de marcadores de tu navegador.
-- Repite el proceso para `facilauto-block-keys.js`.
 
-Cuando estés en la página de FacilAuto, pulsa los bookmarklets y se activarán los atajos.
+Cuando estés en la página de FacilAuto, pulsa el bookmarklet y se activarán las teclas.
 
-La activación de los atajos persiste entre página y página siempre que no recargues la página (F5) ni la abandones.
+La activación de las teclas persiste entre pantalla y pantalla siempre que no recargues la página (F5) ni la abandones.
 
 ## Asociaciones de teclas
 
