@@ -2,6 +2,7 @@
 // @name            FacilAuto Keys
 // @namespace       victor-gp.dev
 // @description     Añade navegación por teclado en algunas páginas de la aplicación web de FacilAuto (test, selección de test).
+// @version         1.0.2
 // @match           https://alumno.examentrafico.com/
 // @grant           none
 // @author          victor-gp
@@ -9,7 +10,8 @@
 // @homepageURL     https://github.com/victor-gp/userscripts-facilauto-keybindings
 // @supportURL      https://github.com/victor-gp/userscripts-facilauto-keybindings/issues
 // @contributionURL
-// @version         1.0.1
+// @name:en         FacilAuto Keys
+// @description:en  Keybindings for the FacilAuto web app for driving license tests.
 // ==/UserScript==
 
 (function testKeys() {
