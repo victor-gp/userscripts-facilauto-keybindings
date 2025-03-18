@@ -2,7 +2,7 @@
 // @name            FacilAuto Keys
 // @namespace       victor-gp.dev
 // @description     Añade navegación por teclado en algunas páginas de la aplicación web de FacilAuto (test, selección de test).
-// @version         1.0.2
+// @version         1.0.3
 // @match           https://alumno.examentrafico.com/
 // @grant           none
 // @author          victor-gp
@@ -41,7 +41,7 @@
     };
 
     function isTargetPage() {
-        const urlMatch = window.location.hash !== '#/test/block/test/exam/174/0';
+        const urlMatch = window.location.hash == '#/';
         if (!urlMatch) return false;
         const contentMatch = document.querySelector('div.test-box-top') !== null;
         return contentMatch;
@@ -50,7 +50,7 @@
     function handleKeydown(event) {
         let key = event.key;
         // normalize letter keys
-        if (/^[A-Za-z]$/.test(key)) {
+        if (/^[a-z]$/.test(key)) {
             key = key.toUpperCase();
         }
 
@@ -108,16 +108,14 @@
 
     // Configuration: Map keys to functions
     const keyFunctionMap = {
-        'A': makeButtonsTabbable,
         'Enter': () => simulateClick(document.activeElement),
         'J': focusNextTest,
         'K': focusPreviousTest,
-        // 'Tab': next button (implicit)
+        // 'Tab': next button (implicit, they're tabbable elements)
     };
 
     function isTargetPage() {
-        const urlHashRegex = new RegExp("^#/test/block/");
-        const urlMatch = window.location.hash.match(urlHashRegex);
+        const urlMatch = window.location.hash.startsWith('#/test/block/');
         if (!urlMatch) return false;
         const contentMatch = document.querySelector("div.tests-index") !== null;
         return contentMatch;
@@ -158,7 +156,7 @@
     function handleKeydown(event) {
         let key = event.key;
         // normalize letter keys
-        if (/^[A-Za-z]$/.test(key)) {
+        if (/^[a-z]$/.test(key)) {
             key = key.toUpperCase();
         }
 

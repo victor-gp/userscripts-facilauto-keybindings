@@ -5,11 +5,11 @@ Userscript para la aplicación web de FacilAuto que añade navegación por tecla
 - la página de test
 - la página de selección de test (lista)
 
-Lo he creado para agilizar mi uso de la aplicación y los comparto por si le pueden resultar útiles a alguien más.
+Lo he creado para agilizar mi uso de la aplicación y lo comparto por si le puede resultar útil a alguien más.
 
 No es una solución completa para la accesibilidad de teclado, el resto de pantallas aún requieren el uso del ratón.
 
-Si añades una página de selección de test a marcadores (por ejemplo: [Examen por Ordenador B](https://alumno.examentrafico.com/#/test/block/test/exam/174/0)), puedes navegar fácilmente entre estas dos páginas.
+Si añades una página de selección de test a marcadores (por ejemplo: [Examen por Ordenador B](https://alumno.examentrafico.com/#/test/block/test/exam/174/0)), puedes navegar todo el rato entre esta página y la de test.
 
 ## Asociaciones de teclas
 
