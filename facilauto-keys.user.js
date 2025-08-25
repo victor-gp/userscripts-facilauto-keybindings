@@ -41,7 +41,7 @@
     };
 
     function isTargetPage() {
-        const urlMatch = window.location.hash == '#/';
+        const urlMatch = window.location.hash.startsWith('#/test/view/');
         if (!urlMatch) return false;
         const contentMatch = document.querySelector('div.test-box-top') !== null;
         return contentMatch;
