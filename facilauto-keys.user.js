@@ -69,12 +69,15 @@
         }
     }
 
+    let isPluginLoaded = false;
     function handlePageChange() {
         if (isTargetPage()) {
             document.addEventListener('keydown', handleKeydown);
+            isPluginLoaded = true;
             console.debug(`${script_id}: load`);
-        } else {
+        } else if (isPluginLoaded) {
             document.removeEventListener('keydown', handleKeydown);
+            isPluginLoaded = false;
             console.debug(`${script_id}: remove`);
         }
     }
@@ -183,6 +186,7 @@
         }, 50)
     }
 
+    let isPluginLoaded = false;
     function handlePageChange() {
         if (isTargetPage()) {
             const isPageLoaded = () => {
@@ -192,11 +196,13 @@
             const setUp = () => {
                 makeButtonsTabbable();
                 document.addEventListener("keydown", handleKeydown);
+                isPluginLoaded = true;
                 console.debug(`${script_id}: load`);
             };
             waitUntil(isPageLoaded, setUp);
-        } else {
+        } else if (isPluginLoaded) {
             document.removeEventListener("keydown", handleKeydown);
+            isPluginLoaded = false;
             console.debug(`${script_id}: remove`);
         }
     }
