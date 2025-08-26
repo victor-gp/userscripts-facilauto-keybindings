@@ -2,7 +2,7 @@
 // @name            FacilAuto Keys
 // @namespace       victor-gp.dev
 // @description     Añade navegación por teclado en algunas páginas de la aplicación web de FacilAuto (test, selección de test).
-// @version         1.0.3
+// @version         1.0.4
 // @match           https://alumno.examentrafico.com/
 // @grant           none
 // @author          victor-gp
