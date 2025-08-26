@@ -176,6 +176,22 @@
         }
     }
 
+    let isPluginLoaded = false;
+    function handlePageChange() {
+        if (isTargetPage()) {
+            waitUntil(isPageLoaded, () => {
+                makeButtonsTabbable();
+                document.addEventListener("keydown", handleKeydown);
+                isPluginLoaded = true;
+                console.debug(`${script_id}: load`);
+            });
+        } else if (isPluginLoaded) {
+            document.removeEventListener("keydown", handleKeydown);
+            isPluginLoaded = false;
+            console.debug(`${script_id}: remove`);
+        }
+    }
+
     function waitUntil(condFn, execFn) {
         setTimeout(() => {
             if (condFn()) {
@@ -186,25 +202,9 @@
         }, 50)
     }
 
-    let isPluginLoaded = false;
-    function handlePageChange() {
-        if (isTargetPage()) {
-            const isPageLoaded = () => {
-                const tooltipElements = document.querySelectorAll(".has-tooltip");
-                return tooltipElements.length !== 0;
-            };
-            const setUp = () => {
-                makeButtonsTabbable();
-                document.addEventListener("keydown", handleKeydown);
-                isPluginLoaded = true;
-                console.debug(`${script_id}: load`);
-            };
-            waitUntil(isPageLoaded, setUp);
-        } else if (isPluginLoaded) {
-            document.removeEventListener("keydown", handleKeydown);
-            isPluginLoaded = false;
-            console.debug(`${script_id}: remove`);
-        }
+    function isPageLoaded() {
+        const tooltipElements = document.querySelectorAll(".has-tooltip");
+        return tooltipElements.length !== 0;
     }
 
     let lastUrl = window.location.href;
